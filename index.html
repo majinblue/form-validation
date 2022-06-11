@@ -4,9 +4,25 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
   <title>Form Validation</title>
 </head>
 <body>
-  
+  <!-- Form validation is a practice that allows us to format user data as needed for our server -->
+  <form>
+    <div>
+      <label for="choose">Would you prefer a banana or cherry? (required)</label>
+      <!-- 'required' gives our inputs a state of being either valid or invalid -->
+      <input id="choose" name="i_like" required minlength="6" maxlength="6">
+      <button>Submit</button>
+    </div>
+    <div>
+      <label for="number">How many would you like?</label>
+      <input type="number" id="number" min="1" max="10" name="amount" value="1"  >
+    </div>
+    <div>
+      <button type="submit">Submit</button>
+    </div>
+  </form>
 </body>
 </html>
