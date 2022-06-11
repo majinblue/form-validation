@@ -8,21 +8,50 @@
   <title>Form Validation</title>
 </head>
 <body>
-  <!-- Form validation is a practice that allows us to format user data as needed for our server -->
   <form>
-    <div>
-      <label for="choose">Would you prefer a banana or cherry? (required)</label>
-      <!-- 'required' gives our inputs a state of being either valid or invalid -->
-      <input id="choose" name="i_like" required minlength="6" maxlength="6">
-      <button>Submit</button>
-    </div>
-    <div>
-      <label for="number">How many would you like?</label>
-      <input type="number" id="number" min="1" max="10" name="amount" value="1"  >
-    </div>
-    <div>
+
+    <p>
+      <fieldset>
+        <legend>Do you have a driver's license?</legend>
+        <input type="radio" required name="driver" id="r1" value="Yes">
+        <label for="r1">Yes</label>
+        <input type="radio" required name="driver" id="r2" value="No">
+        <label for="r2">No</label>
+      </fieldset>
+    </p>
+
+    <p>
+      <label for="n1">How old are you?</label>
+      <input type="number" id="n1" min="1" max="120" name="age" step="1" pattern="\d+">
+    </p>
+
+    <p>
+      <label for="t1">What's your favorite fruit? <abbr title="This field is mandatory" aria-label="required">*</abbr></label>
+      <input type="text" id="t1" name="fruit" list="ll" required pattern="[Bb]anana|[Cc]herry|[Aa]pple|[Ss]trawberry|[Ll]emon|[Oo]range">
+      <select id="ll">
+        <option>Banana</option>
+        <option>Cherry</option>
+        <option>Apple</option>
+        <option>Strawberry</option>
+        <option>Lemon</option>
+        <option>Orange</option>
+      </select>
+    </p>
+
+    <p>
+      <label for="t2">What is your email address?</label>
+      <input type="email" id="t2" name="email">
+    </p>
+
+    <p>
+      <label for="t3">Leave a short message</label>
+      <textarea name="msg" id="t3" maxlength="140" rows="5"></textarea>
+    </p>
+
+    <p>
       <button type="submit">Submit</button>
-    </div>
+    </p>
+
   </form>
 </body>
 </html>
